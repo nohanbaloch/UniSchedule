@@ -84,7 +84,7 @@ function bindEvents() {
     $("#btnClearSchedule").addEventListener("click", () => { clearSchedule(); renderAll(); });
     $("#btnResetAll").addEventListener("click", () => { if (clearAll()) { renderAll(); persistSilently(); } });
 
-    $("#btnSeed").addEventListener("click", () => { seedSample(); renderAll(); persistSilently(); });
+    $("#btnSeed").addEventListener("click", () => { seedSample(); generateSchedule(); renderAll(); persistSilently(); });
 
     $("#btnSortCourses").addEventListener("click", () => { smartSortCourses(); renderAll(); persistSilently(); });
 
