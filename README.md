@@ -61,6 +61,13 @@ _Note: The installer is located in the `release/` directory of this repository._
 - Satisfied with the result? Click **"Export DOCX"** in the top bar to download your schedule as a Word document.
 - You can also click **"Save"** to persist your current session data.
 
+### 7. Data Persistence
+
+- **Auto-Save**: Your data is automatically saved to your device (Local Storage for web, App Data for desktop) as you work.
+- **Privacy**: No data is sent to the cloud. It stays on your device.
+- **Safety**: Your data will **not** disappear when you close the tab or app.
+- **Reset**: To clear your data and start fresh, use the **"Reset Data"** button (in the courses panel).
+
 ## Future Plans
 
 - **Cloud Sync**: Save and access schedules across multiple devices.
