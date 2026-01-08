@@ -82,6 +82,7 @@ function bindEvents() {
     $("#btnExportDocx").addEventListener("click", exportDocx);
 
     $("#btnClearSchedule").addEventListener("click", () => { clearSchedule(); renderAll(); });
+    $("#btnResetAll").addEventListener("click", () => { if (clearAll()) { renderAll(); persistSilently(); } });
 
     $("#btnSeed").addEventListener("click", () => { seedSample(); renderAll(); persistSilently(); });
 
