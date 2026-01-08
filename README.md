@@ -2,8 +2,6 @@
 
 UniSchedule is a modern timetable generator for school or college or university courses. Designed to help students and faculty tune working days, manage instructors, and generate conflict-free schedules with ease.
 
-**Website:** [https://personatable.netlify.app/](https://personatable.netlify.app/)
-
 ## Features
 
 - **Course Management**: Add, search, and manage university courses.
@@ -17,7 +15,7 @@ UniSchedule is a modern timetable generator for school or college or university 
 
 You can download the latest installer for Windows from the release folder:
 
-[Download Latest Installer (v1.0.0)](release/PersonaTable%20Setup%201.0.0.exe)
+windows app comming soon
 
 _Note: The installer is located in the `release/` directory of this repository._
 
@@ -83,7 +81,7 @@ Designed & Developed by:
 - **Nohan Baloch**
 - **Rafay Ahmed Memon**
 
-&copy; 2026 UniSchedule. All rights reserved.
+&copy; 2026 Mehrtek. All rights reserved.
 
 ## License
 
