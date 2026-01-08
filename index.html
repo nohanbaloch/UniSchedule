@@ -20,11 +20,11 @@
 
   <header class="sticky top-0 z-50">
     <div class="glass border-b border-white/10">
-      <div class="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="h-16 flex items-center justify-between gap-4">
-          <a href="#top" class="flex items-center gap-3">
-            <img src="icon.png" alt="UniSchedule Logo" class="w-9 h-9 rounded-xl object-contain border border-white/15">
-            <div class="leading-tight">
+      <div class="max-w-[95%] mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="h-16 flex items-center justify-between gap-2 sm:gap-4">
+          <a href="#top" class="flex items-center gap-2 sm:gap-3">
+            <img src="icon.png" alt="UniSchedule Logo" class="logo-img w-9 h-9 rounded-xl object-contain border border-white/15">
+            <div class="leading-tight hidden sm:block">
               <div class="font-bold tracking-tight">UniSchedule</div>
               <div class="text-xs text-white/60 -mt-0.5">
               </div>
@@ -33,16 +33,57 @@
 
 
 
-          <div class="flex items-center gap-2">
-            <button id="btnSeed" class="btn px-3 py-2 rounded-xl text-sm hidden sm:inline-flex">Load sample</button>
-            <button id="btnSave" class="btn px-3 py-2 rounded-xl text-sm hidden sm:inline-flex"
-              title="Save to browser storage">Save</button>
-            <button id="btnExportDocx" class="btn px-3 py-2 rounded-xl text-sm hidden sm:inline-flex">Export DOCX</button>
-            <button id="btnGenerate"
-              class="btn btn-primary px-3 py-2 rounded-xl text-sm inline-flex items-center gap-2">
-              <span>Generate</span>
+          <div class="flex items-center gap-1.5 sm:gap-3">
+            <!-- Theme Container -->
+            <div class="flex items-center gap-1 sm:gap-2">
+              <span class="header-label text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/40 mb-[-1px] hidden md:inline">Themes</span>
+              <div class="relative">
+                <button id="btnThemeToggle" class="btn w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full p-0 relative" title="Switch theme">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 theme-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                  </svg>
+                </button>
+                
+                <div id="themeDropdown" class="theme-dropdown-menu hidden">
+                  <div class="theme-dropdown-inner">
+                    <button class="theme-opt" data-theme="onyx" title="Onyx (Dark)">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                      </svg>
+                    </button>
+                    <button class="theme-opt" data-theme="alabaster" title="Alabaster (Light)">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    </button>
+                    <button class="theme-opt" data-theme="spectrum" title="Spectrum (Vibrant)">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.828 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button id="btnSeed" class="btn w-8 h-8 sm:w-auto sm:px-3 sm:py-2 rounded-xl text-sm flex items-center justify-center sm:inline-flex" title="Load sample">
+              <span class="hidden sm:inline">Load sample</span>
+              <svg class="w-4 h-4 sm:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </button>
+            <button id="btnSave" class="btn w-8 h-8 sm:w-auto sm:px-3 sm:py-2 rounded-xl text-sm flex items-center justify-center sm:inline-flex" title="Save to browser storage">
+              <span class="hidden sm:inline">Save</span>
+              <svg class="w-4 h-4 sm:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/></svg>
+            </button>
+            <button id="btnExportDocx" class="btn w-8 h-8 sm:w-auto sm:px-3 sm:py-2 rounded-xl text-sm flex items-center justify-center sm:inline-flex" title="Export DOCX">
+              <span class="hidden sm:inline">Export DOCX</span>
+              <svg class="w-4 h-4 sm:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/></svg>
+            </button>
+            <button id="btnGenerate" class="btn btn-primary w-8 h-8 sm:w-auto sm:px-3 sm:py-2 rounded-xl text-sm flex items-center justify-center sm:inline-flex items-center gap-2">
+              <span class="hidden sm:inline">Generate</span>
+              <svg class="w-4 h-4 sm:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
               <span class="kbd hidden lg:inline">G</span>
             </button>
+          </div>
           </div>
         </div>
       </div>

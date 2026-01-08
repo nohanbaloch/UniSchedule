@@ -69,7 +69,36 @@ function makeAllAvailableForSelected() {
     toast("Updated", "All slots marked available.", "ok");
 }
 
+function setTheme(theme) {
+    document.body.classList.remove("theme-onyx", "theme-alabaster", "theme-spectrum");
+    document.body.classList.add(`theme-${theme}`);
+    
+    // Update custom UI active state
+    document.querySelectorAll(".theme-opt").forEach(opt => {
+        opt.classList.toggle("active", opt.dataset.theme === theme);
+    });
+
+    localStorage.setItem("uni-theme-new", theme);
+}
+
 function bindEvents() {
+    $("#btnThemeToggle").addEventListener("click", (e) => {
+        e.stopPropagation();
+        $("#themeDropdown").classList.toggle("hidden");
+    });
+
+    document.querySelectorAll(".theme-opt").forEach(opt => {
+        opt.addEventListener("click", (e) => {
+            setTheme(opt.dataset.theme);
+            $("#themeDropdown").classList.add("hidden");
+        });
+    });
+
+    document.addEventListener("click", () => {
+        const dropdown = $("#themeDropdown");
+        if (dropdown) dropdown.classList.add("hidden");
+    });
+
     $("#btnAddCourse").addEventListener("click", () => openCourseEditor(null));
     $("#btnAddInstructor").addEventListener("click", () => openInstructorEditor(null));
 
@@ -149,6 +178,11 @@ function bindEvents() {
 }
 
 function init() {
+    // Migrate or set initial theme
+    const savedTheme = localStorage.getItem("uni-theme-new") || 
+                       (localStorage.getItem("uni-theme") === "light" ? "alabaster" : "onyx");
+    setTheme(savedTheme);
+
     state.settings.days = [...DEFAULT_DAYS];
     const loaded = loadFromStorage();
     if (!loaded) {
