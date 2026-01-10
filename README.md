@@ -17,7 +17,7 @@ You can download the latest installer for Windows from the release folder:
 
 windows app comming soon
 
-_Note: The installer is located in the `release/` directory of this repository._
+_Note: The installer is located in the `release/` section._
 
 ## User Guide
 
