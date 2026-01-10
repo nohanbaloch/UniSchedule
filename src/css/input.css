@@ -2,10 +2,10 @@
 
 @theme {
   --font-sans: "LocalFont", "Inter", "ui-sans-serif", "system-ui";
-  --shadow-soft: 0 10px 30px rgba(0,0,0,0.10);
-  --shadow-glow: 0 0 0 1px rgba(255,255,255,0.14), 0 18px 50px rgba(0,0,0,0.30);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 18px 50px rgba(0, 0, 0, 0.3);
 }
-
 
 .glow-blob-1 {
   background: radial-gradient(
@@ -175,6 +175,62 @@ body {
   font-size: 12px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+}
+
+/* Custom Select */
+.custom-select-wrap {
+  position: relative;
+  width: 100%;
+}
+.custom-select-trigger {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  z-index: 2;
+}
+.custom-select-wrap.open .custom-select-trigger {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: rgba(34, 211, 238, 0.4);
+}
+.custom-select-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--stroke2);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  padding: 6px;
+  z-index: 50;
+  max-height: 240px;
+  overflow-y: auto;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  margin-top: -1px; /* Gap fix */
+}
+.custom-select-menu.hidden {
+  display: none !important;
+}
+.custom-select-opt {
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--muted);
+  transition: background 140ms ease, color 140ms ease;
+}
+.custom-select-opt:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+}
+.custom-select-opt.active {
+  background: rgba(124, 58, 237, 0.2);
+  color: var(--text);
+  font-weight: 600;
 }
 
 .subtle-divider {
