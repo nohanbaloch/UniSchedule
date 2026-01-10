@@ -29,7 +29,7 @@ Built with:
 - **Tailwind CSS** (Styling)
 - **Vanilla JS** (Core Logic)
 
-## Credits
+## 👥 Credits
 
 Designed & Developed by **Team Mehrtek**:
 

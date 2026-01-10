@@ -28,5 +28,12 @@ Replaced the default system dropdown for **Instructor Selection** with a custom-
 
 - `style: fix icon transparency and refine instructor select UI` (Commit: `3ad3168`)
 
+## 👥 Credits
+
+Designed & Developed by **Team Mehrtek**:
+
+- Nohan Baloch
+- Rafay Ahmed Memon
+
 ---
-**Team Mehrtek** - _Streamlining your university schedule, one pixel at a time._
+_Thank you for using UniSchedule!_
