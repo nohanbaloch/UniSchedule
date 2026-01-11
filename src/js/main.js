@@ -1,3 +1,4 @@
+import { initTheme, bindThemeEvents } from "./themes.js";
 import {
   state,
   getInstructor,
@@ -110,44 +111,10 @@ function makeAllAvailableForSelected() {
   toast("Updated", "All slots marked available.", "ok");
 }
 
-function setTheme(theme) {
-  document.body.classList.remove(
-    "theme-onyx",
-    "theme-alabaster",
-    "theme-spectrum"
-  );
-  document.body.classList.add(`theme-${theme}`);
 
-  // Update custom UI active state
-  document.querySelectorAll(".theme-opt").forEach((opt) => {
-    opt.classList.toggle("active", opt.dataset.theme === theme);
-  });
-
-  localStorage.setItem("uni-theme-new", theme);
-}
 
 function bindEvents() {
-    // Theme Toggle
-    const btnThemeToggle = $("#btnThemeToggle");
-    const themeDropdown = $("#themeDropdown");
-    if (btnThemeToggle && themeDropdown) {
-        btnThemeToggle.addEventListener("click", (e) => {
-            e.stopPropagation();
-            themeDropdown.classList.toggle("hidden");
-        });
-    }
-
-    // Theme Options (using delegation)
-    if (themeDropdown) {
-        themeDropdown.addEventListener("click", (e) => {
-            const opt = e.target.closest(".theme-opt");
-            if (opt) {
-                e.stopPropagation();
-                setTheme(opt.dataset.theme);
-                themeDropdown.classList.add("hidden");
-            }
-        });
-    }
+    bindThemeEvents();
 
     // Instructor Custom Select
     const instBtn = $("#instructorSelectBtn");
@@ -288,9 +255,7 @@ function bindEvents() {
 }
 
 function init() {
-  // Default to onyx (dark)
-  const savedTheme = localStorage.getItem("uni-theme-new") || "onyx";
-  setTheme(savedTheme);
+  initTheme();
 
   state.settings.days = [...DEFAULT_DAYS];
   const loaded = loadFromStorage();

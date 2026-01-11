@@ -9,6 +9,7 @@
     "watch:css": "tailwindcss -i src/css/input.css -o src/css/style.css --watch",
     "start": "electron .",
     "dev": "concurrently \"npm run watch:css\" \"npm start\"",
+    "serve": "npx serve .",
     "dist": "npm run build:css && electron-builder",
     "pack": "npm run build:css && electron-builder --dir"
   },
