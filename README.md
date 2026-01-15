@@ -75,7 +75,7 @@ Simply open `index.html` in any modern web browser to use the application instan
 
 ### 1. Getting Started
 
-Launch **UniSchedule**. You can start fresh or click **"Load sample"** in the top navigation bar to populate the app with demo data to see how it works.
+Launch **UniSchedule**. You can start fresh or click **"Load sample"** in the timetable toolbar to populate the app with demo data to see how it works.
 
 ### 2. Managing Courses & Instructors
 

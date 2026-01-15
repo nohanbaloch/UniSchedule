@@ -5,6 +5,7 @@
   "author": "Mehrtek",
   "main": "main.js",
   "scripts": {
+    "build": "npm run build:css",
     "build:css": "tailwindcss -i src/css/input.css -o src/css/style.css",
     "watch:css": "tailwindcss -i src/css/input.css -o src/css/style.css --watch",
     "start": "electron .",
